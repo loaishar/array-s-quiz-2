@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+//import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Ex2 {
@@ -35,7 +35,7 @@ public class Ex2 {
               // //-----------------------
        }
 
-       // public static double root(double[] p, double x1, double x2, double eps) {
+       public static double root(double[] p, double x1, double x2, double eps) {
 
        // // if (f(p,x1) * f(p,x2) >= 0) {
        // // System.out.println("You have not assumed" + " right x1 and x2");
@@ -56,12 +56,13 @@ public class Ex2 {
                      x2 = c;
               else
                      x1 = c;
-       }
+       
        // prints value of c upto 4 decimal places
        // System.out.printf("The value of root is : %.4f", c);
+       }
        return c;
-       // //--------------------------------------------------
-       // }
+}
+       // //-------------------------------------------------
 
        public static double[] add(double[] p1, double[] p2) {
        //        //-----------------------
@@ -95,62 +96,53 @@ public class Ex2 {
        }
 
        public static double[] mul(double[] p1, double[] p2) {
-       //        //-----------------------
-       double[] p1 = { 2, 3, 4 };
-       double[] p2 = { 2, 3 };
-       int maxlentharr, minlentharr, fin=0, lin;
-       if (p1.length > p2.length) {
-           maxlentharr = p1.length;
-           minlentharr = p2.length;
-       } else {
-           maxlentharr = p2.length;
-           minlentharr = p1.length;
-       }
-       lin=maxlentharr;
-       double[] Array = new double[maxlentharr + minlentharr];
-       for (int i = 0; i < Array.length; i++) {
-           Array[i] = 0;
-       }
-       String son=Arrays.toString(Array);
-       System.out.println(son);
-
-       for (int k = 0; k < p1.length; k++) {
-           for (int j = 0; j < p2.length; j++) {
-               Array[j + k] +=(p1[k] * p2[j]);
-
-           }
-           System.out.println(Arrays.toString(Array));
-       }
-       for (int i = 0; Array[i]==0; i++) {
-          // if (Array[i] != 0) {
-               fin = i;
-            //   break;
-         //  }
-       }
-       for (int i = (Array.length )- 1; Array[i]== 0; i--) {
-          // if (Array[i] != 0) {
-               lin = i;
-          //    // break;
-         //  }
-       }
-     //  System.out.println("------------------");
-       for (double element : Array) {
-           System.out.println("------------------");
-           System.out.println(element);
-       }
-
-
-       double[] copy = Arrays.copyOfRange(Array, fin, lin); 
-       for (double i : copy) 
-           System.out.print(i + "  "); 
+              int maxlentharr, minlentharr, fin=0, lin;
+        if (p1.length > p2.length) {
+            maxlentharr = p1.length;
+            minlentharr = p2.length;
+        } else {
+            maxlentharr = p2.length;
+            minlentharr = p1.length;
+        }
+        lin=maxlentharr;
+        double[] Array = new double[maxlentharr + minlentharr];
+        for (int i = 0; i < Array.length; i++) {
+            Array[i] = 0;
+        }
  
-       System.out.println(); 
+        for (int k = 0; k < p1.length; k++) {
+            for (int j = 0; j < p2.length; j++) {
+                Array[j + k] +=(p1[k] * p2[j]);
+ 
+            }
+            //System.out.println(Arrays.toString(Array));
+        }
+        for (int i = 0; Array[i]==0; i++) {
+           // if (Array[i] != 0) {
+               fin = i;
+             //   break;
+          //  }
+        }
+        for (int i = (Array.length )- 1; Array[i]== 0; i--) {
+           // if (Array[i] != 0) {
+               lin = i;
+           //    // break;
+          //  }
+        }
+ 
+ 
+         double[] copy = Arrays.copyOfRange(Array, fin, lin); 
+         for (double i : copy) 
+             System.out.print(i + "  ");  
+ 
+ 
+        return Array;
+ 
+        //        //-----------------------
 
 
-
-
-       //        //-----------------------
        }
+       
 
        public static double[] derivative(double[] po) {
         double D[] = new double[po.length-1];
